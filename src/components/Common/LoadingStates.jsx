@@ -36,3 +36,23 @@ export const TableSkeleton = () => (
         ))}
     </div>
 );
+
+export const HeaderSkeleton = () => (
+    <div className="bg-white shadow-sm border-b border-gray-200 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-20">
+                <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gray-200 rounded-2xl"></div>
+                    <div>
+                        <div className="h-6 bg-gray-200 rounded w-48 mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded w-32"></div>
+                    </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                    <div className="h-10 bg-gray-200 rounded w-32"></div>
+                    <div className="h-10 bg-gray-200 rounded w-10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+);
