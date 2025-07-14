@@ -37,11 +37,11 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                         </div>
                         <div className="min-w-0 flex-1">
                             <h1 className="text-lg sm:text-2xl font-display font-bold text-gradient-primary truncate">
-                                Pizza Hut Analytics
+                                Analytics Dashboard
                             </h1>
-                            <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">
-                                System By SynthiaSync
-                            </p>
+                            {/*<p className="text-xs sm:text-sm text-gray-500 hidden sm:block">*/}
+                            {/*    System By SynthiaSync*/}
+                            {/*</p>*/}
                         </div>
                     </div>
 
