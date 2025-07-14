@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import CCTVSection from './CCTVSection';
 import {
     ClockIcon,
     UserGroupIcon,
@@ -9,6 +8,7 @@ import {
 import ProfessionalHeader from '../Layout/ProfessionalHeader';
 import ProfessionalKPICard from './ProfessionalKPICard';
 import ProfessionalChart from '../Charts/ProfessionalChart';
+import CCTVSection from './CCTVSection';
 import { storeSpecificData, generateChartData, stores } from '../../data/dummyData';
 
 const Dashboard = () => {
@@ -97,7 +97,7 @@ const Dashboard = () => {
                         trend={`${metrics.queueLength > currentStoreData.previousMetrics.queueLength ? '+' : ''}${metrics.queueLength - currentStoreData.previousMetrics.queueLength} from previous`}
                         icon={UserGroupIcon}
                         description={`Current customers at ${selectedStore}`}
-                        gradient="from-blue-500 to-blue-600"
+                        gradient="from-primary-500 to-secondary-500"
                         previousValue={currentStoreData.previousMetrics.queueLength}
                         target={currentStoreData.targets.queueLength}
                     />
@@ -108,7 +108,7 @@ const Dashboard = () => {
                         trend="12% improvement"
                         icon={ClockIcon}
                         description="Estimated wait time"
-                        gradient="from-green-500 to-green-600"
+                        gradient="from-secondary-500 to-accent-400"
                         previousValue={currentStoreData.previousMetrics.waitTime}
                     />
                     <ProfessionalKPICard
@@ -118,7 +118,7 @@ const Dashboard = () => {
                         trend="-2.5pp vs baseline"
                         icon={ExclamationTriangleIcon}
                         description="Customers leaving without service"
-                        gradient="from-orange-500 to-orange-600"
+                        gradient="from-accent-400 to-accent-500"
                         previousValue={`${currentStoreData.previousMetrics.abandonmentRate}%`}
                         target={currentStoreData.targets.abandonmentRate}
                     />
@@ -144,7 +144,7 @@ const Dashboard = () => {
                         subtitle="Real-time and predicted queue patterns"
                         type="line"
                         height={400}
-                        colors={['#915490', '#3b82f6', '#10b981']}
+                        colors={['#8b5cf6', '#0ea5e9', '#e879f9']}
                     />
                     <ProfessionalChart
                         data={chartData}
@@ -155,6 +155,7 @@ const Dashboard = () => {
                         colors={['#f59e0b', '#ef4444']}
                     />
                 </div>
+
                 {/* CCTV Monitoring Section */}
                 <div className="mb-8">
                     <CCTVSection store={selectedStore} />
@@ -194,14 +195,14 @@ const Dashboard = () => {
                 </div>
 
                 {/* Store-specific performance summary */}
-                <div className="bg-white rounded-2xl shadow-lg p-8 animate-fade-in">
+                <div className="bg-white rounded-2xl shadow-soft p-8 animate-fade-in">
                     <div className="text-center">
-                        <h2 className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent mb-4">
+                        <h2 className="text-2xl font-bold text-gradient-primary mb-4">
                             {selectedStore} Performance Summary
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-green-600 mb-2">
+                                <div className="text-3xl font-bold text-status-success mb-2">
                                     {currentStoreData.currentMetrics.slaCompliance}%
                                 </div>
                                 <div className="text-sm text-gray-600">SLA Compliance</div>
@@ -213,13 +214,13 @@ const Dashboard = () => {
                                 <div className="text-sm text-gray-600">Service Delays</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-blue-600 mb-2">
+                                <div className="text-3xl font-bold text-secondary-600 mb-2">
                                     {stores.find(s => s.name === selectedStore)?.capacity}
                                 </div>
                                 <div className="text-sm text-gray-600">Max Capacity</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-orange-600 mb-2">
+                                <div className="text-3xl font-bold text-accent-600 mb-2">
                                     4.2m
                                 </div>
                                 <div className="text-sm text-gray-600">Avg Resolution Time</div>

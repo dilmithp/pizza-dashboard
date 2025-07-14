@@ -28,7 +28,7 @@ const ProfessionalChart = ({
                                height = 400,
                                showLegend = true,
                                showGrid = true,
-                               colors = ['#915490', '#3b82f6', '#10b981', '#f59e0b'],
+                               colors = ['#8b5cf6', '#0ea5e9', '#e879f9', '#10b981'],
                                onTypeChange
                            }) => {
     const [chartType, setChartType] = useState(type);
@@ -173,7 +173,7 @@ const ProfessionalChart = ({
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-lg p-6 animate-fade-in">
+        <div className="bg-white rounded-2xl shadow-soft p-6 animate-fade-in">
             {/* Chart Header */}
             <div className="flex items-center justify-between mb-6">
                 <div>
@@ -195,7 +195,7 @@ const ProfessionalChart = ({
                                     }}
                                     className={`p-2 rounded-lg transition-all duration-200 ${
                                         chartType === type
-                                            ? 'bg-primary-500 text-white shadow-brand'
+                                            ? 'bg-primary-500 text-white shadow-primary'
                                             : 'text-gray-600 hover:bg-gray-200'
                                     }`}
                                 >
@@ -208,7 +208,7 @@ const ProfessionalChart = ({
                     {/* Settings */}
                     <button
                         onClick={() => setShowSettings(!showSettings)}
-                        className="p-2 text-gray-600 hover:text-primary-500 hover:bg-gray-50 rounded-lg transition-all duration-200"
+                        className="p-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-200"
                     >
                         <Cog6ToothIcon className="w-4 h-4" />
                     </button>

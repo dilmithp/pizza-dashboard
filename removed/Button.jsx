@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '../src/components/Common/LoadingSpinner.jsx';
 
 const Button = ({
                     children,

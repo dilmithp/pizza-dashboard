@@ -7,14 +7,13 @@
     @apply font-sans bg-gray-50 text-gray-900 antialiased;
   }
 
-  /* Fix for Heroicons sizing - Force SVG elements to respect size constraints */
+  /* Fix for Heroicons sizing */
   svg {
     @apply inline-block;
     width: inherit !important;
     height: inherit !important;
   }
 
-  /* Specific overrides for Heroicons */
   [data-slot="icon"] {
     width: inherit !important;
     height: inherit !important;
@@ -27,7 +26,7 @@
 
 @layer components {
   .card {
-    @apply bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300;
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-medium transition-all duration-300;
   }
 
   .kpi-card {
@@ -39,14 +38,14 @@
   }
 
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-primary hover:shadow-primary-lg;
   }
 
   .btn-secondary {
     @apply bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium transition-all duration-200;
   }
 
-  /* Icon size utilities with !important to override defaults */
+  /* Icon size utilities with !important */
   .icon-xs {
     width: 12px !important;
     height: 12px !important;
@@ -82,95 +81,24 @@
     max-width: 32px !important;
     max-height: 32px !important;
   }
-
-  /* Shimmer effect for loading states */
-  .shimmer {
-    @apply relative overflow-hidden;
-  }
-
-  .shimmer::before {
-    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
-    content: '';
-    animation: shimmer 2s infinite;
-  }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent;
   }
 
-  .border-gradient {
-    @apply border border-transparent bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-border;
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent;
   }
 
   /* Force specific icon sizes */
-  .w-4 {
-    width: 1rem !important;
-  }
-
-  .h-4 {
-    height: 1rem !important;
-  }
-
-  .w-5 {
-    width: 1.25rem !important;
-  }
-
-  .h-5 {
-    height: 1.25rem !important;
-  }
-
-  .w-6 {
-    width: 1.5rem !important;
-  }
-
-  .h-6 {
-    height: 1.5rem !important;
-  }
-
-  .w-8 {
-    width: 2rem !important;
-  }
-
-  .h-8 {
-    height: 2rem !important;
-  }
-}
-
-/* Custom animations */
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleIn {
-  0% { opacity: 0; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Responsive design helpers */
-@media (max-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .kpi-row {
-    grid-template-columns: 1fr !important;
-  }
-
-  .dashboard-header {
-    flex-direction: column !important;
-    gap: 20px !important;
-  }
+  .w-4 { width: 1rem !important; }
+  .h-4 { height: 1rem !important; }
+  .w-5 { width: 1.25rem !important; }
+  .h-5 { height: 1.25rem !important; }
+  .w-6 { width: 1.5rem !important; }
+  .h-6 { height: 1.5rem !important; }
+  .w-8 { width: 2rem !important; }
+  .h-8 { height: 2rem !important; }
 }

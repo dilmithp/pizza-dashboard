@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './components/Dashboard/Dashboard';
-import ErrorBoundary from './components/Common/ErrorBoundary';
+import ErrorBoundary from '../removed/ErrorBoundary.jsx';
 import './styles/professional.css';
 
 function App() {

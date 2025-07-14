@@ -9,29 +9,29 @@ const ProfessionalKPICard = ({
                                  trend,
                                  icon: Icon,
                                  description,
-                                 gradient = "from-primary-500 to-primary-600",
+                                 gradient = "from-primary-500 to-secondary-500",
                                  previousValue,
                                  target
                              }) => {
     const getStatusStyles = (status) => {
         const styles = {
             success: {
-                border: 'border-l-green-500',
+                border: 'border-l-status-success',
                 bg: 'bg-green-50',
-                dot: 'bg-green-500',
-                text: 'text-green-600'
+                dot: 'bg-status-success',
+                text: 'text-status-success'
             },
             warning: {
-                border: 'border-l-yellow-500',
+                border: 'border-l-status-warning',
                 bg: 'bg-yellow-50',
-                dot: 'bg-yellow-500',
-                text: 'text-yellow-600'
+                dot: 'bg-status-warning',
+                text: 'text-status-warning'
             },
             error: {
-                border: 'border-l-red-500',
+                border: 'border-l-status-error',
                 bg: 'bg-red-50',
-                dot: 'bg-red-500',
-                text: 'text-red-600'
+                dot: 'bg-status-error',
+                text: 'text-status-error'
             }
         };
         return styles[status] || styles.success;
@@ -42,7 +42,7 @@ const ProfessionalKPICard = ({
     const trendValue = trend.match(/[\d.]+/)?.[0] || '0';
 
     return (
-        <div className={`bg-white rounded-2xl shadow-lg p-6 border-l-4 transition-all duration-300 hover:shadow-xl animate-fade-in relative overflow-hidden group ${statusStyles.border} ${statusStyles.bg}`}>
+        <div className={`bg-white rounded-2xl shadow-soft p-6 border-l-4 transition-all duration-300 hover:shadow-medium animate-fade-in relative overflow-hidden group ${statusStyles.border} ${statusStyles.bg}`}>
             {/* Background Pattern */}
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5 overflow-hidden">
                 <div className={`w-full h-full bg-gradient-to-br ${gradient} rounded-full transform translate-x-8 -translate-y-8`}></div>
@@ -52,7 +52,7 @@ const ProfessionalKPICard = ({
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center space-x-4">
-                        <div className={`p-4 rounded-2xl bg-gradient-to-br ${gradient} shadow-brand group-hover:shadow-glow transition-all duration-300`}>
+                        <div className={`p-4 rounded-2xl bg-gradient-to-br ${gradient} shadow-primary group-hover:shadow-primary-lg transition-all duration-300`}>
                             <Icon className="w-6 h-6 text-white" />
                         </div>
                         <div>

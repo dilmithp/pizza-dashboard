@@ -59,20 +59,11 @@ const CCTVSection = ({ store }) => {
         }
     };
 
-    const getQualityColor = (quality) => {
-        switch (quality) {
-            case 'excellent': return 'text-status-success';
-            case 'good': return 'text-primary-500';
-            case 'poor': return 'text-status-warning';
-            default: return 'text-status-neutral';
-        }
-    };
-
     return (
-        <div className="bg-white rounded-2xl shadow-lg p-6">
+        <div className="bg-white rounded-2xl shadow-soft p-6">
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                    <div className="p-3 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl shadow-lg">
+                    <div className="p-3 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl shadow-primary">
                         <CameraIcon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -112,7 +103,7 @@ const CCTVSection = ({ store }) => {
 
                         {/* Recording Indicator */}
                         {camera.recording && (
-                            <div className="absolute top-3 right-3 flex items-center space-x-1 bg-red-500/80 px-2 py-1 rounded text-white text-xs">
+                            <div className="absolute top-3 right-3 flex items-center space-x-1 bg-accent-500/80 px-2 py-1 rounded text-white text-xs">
                                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                                 <span>REC</span>
                             </div>
@@ -124,7 +115,7 @@ const CCTVSection = ({ store }) => {
                         </div>
 
                         {/* Privacy Badge */}
-                        <div className="absolute bottom-3 right-3 bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1 rounded-lg text-sm flex items-center space-x-1">
+                        <div className="absolute bottom-3 right-3 bg-status-success/20 backdrop-blur-sm text-status-success px-3 py-1 rounded-lg text-sm flex items-center space-x-1">
                             <ShieldCheckIcon className="w-4 h-4" />
                             <span>Privacy Protected</span>
                         </div>

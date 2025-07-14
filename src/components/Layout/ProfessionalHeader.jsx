@@ -30,15 +30,15 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                     {/* Logo & Brand */}
                     <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-brand">
+                            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center shadow-primary">
                                 <ChartBarIcon className="w-7 h-7 text-white" />
                             </div>
                             <div>
-                                <h1 className="text-2xl font-display font-bold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent">
+                                <h1 className="text-2xl font-display font-bold text-gradient-primary">
                                     Pizza Hut Analytics
                                 </h1>
                                 <p className="text-sm text-gray-500">
-                                    Real-time Queue Monitoring System
+                                    System By SynthiaSync
                                 </p>
                             </div>
                         </div>
@@ -63,8 +63,8 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                         <div className="h-8 w-px bg-gray-200"></div>
 
                         <div className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm font-medium text-green-600">System Online</span>
+                            <div className="w-2 h-2 bg-status-success rounded-full animate-pulse"></div>
+                            <span className="text-sm font-medium text-status-success">System Online</span>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                         {/* Store Selector */}
                         <div className="relative">
                             <div
-                                className="flex items-center space-x-3 bg-gradient-to-r from-primary-50 to-primary-100 border border-primary-200 rounded-xl px-4 py-3 cursor-pointer hover:from-primary-100 hover:to-primary-200 transition-all duration-200"
+                                className="flex items-center space-x-3 bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-xl px-4 py-3 cursor-pointer hover:from-primary-100 hover:to-secondary-100 transition-all duration-200"
                                 onClick={() => setShowStoreInfo(!showStoreInfo)}
                             >
                                 <MapPinIcon className="w-5 h-5 text-primary-600" />
@@ -86,7 +86,7 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
 
                             {/* Store Status Indicator */}
                             <div className="absolute -top-1 -right-1">
-                                <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+                                <div className="w-3 h-3 bg-status-success rounded-full border-2 border-white animate-pulse"></div>
                             </div>
 
                             {/* Store Dropdown */}
@@ -105,13 +105,13 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                                                 }}
                                                 className={`p-3 rounded-xl cursor-pointer transition-all duration-200 ${
                                                     selectedStore === store.name
-                                                        ? 'bg-primary-50 border-2 border-primary-200'
+                                                        ? 'bg-gradient-to-r from-primary-50 to-secondary-50 border-2 border-primary-200'
                                                         : 'bg-gray-50 hover:bg-gray-100 border-2 border-transparent'
                                                 }`}
                                             >
                                                 <div className="flex items-center justify-between">
                                                     <div className="flex items-center space-x-3">
-                                                        <div className={`w-3 h-3 rounded-full ${store.status === 'online' ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                                                        <div className={`w-3 h-3 rounded-full ${store.status === 'online' ? 'bg-status-success' : 'bg-status-error'}`}></div>
                                                         <div>
                                                             <div className="font-medium text-gray-900">{store.name}</div>
                                                             <div className="text-sm text-gray-500">{store.location}</div>
@@ -137,7 +137,7 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                             >
                                 <BellIcon className="w-6 h-6" />
                                 {alerts.length > 0 && (
-                                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-xs text-white font-bold shadow-medium animate-pulse">
+                                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full flex items-center justify-center text-xs text-white font-bold shadow-medium animate-pulse">
                     {alerts.length}
                   </span>
                                 )}
@@ -159,9 +159,9 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                                                 <div key={index} className="p-4 border-b border-gray-100 last:border-b-0 hover:bg-gray-50">
                                                     <div className="flex items-start space-x-3">
                                                         <div className={`w-2 h-2 rounded-full mt-2 ${
-                                                            alert.type === 'error' ? 'bg-red-500' :
-                                                                alert.type === 'warning' ? 'bg-yellow-500' :
-                                                                    alert.type === 'success' ? 'bg-green-500' : 'bg-blue-500'
+                                                            alert.type === 'error' ? 'bg-status-error' :
+                                                                alert.type === 'warning' ? 'bg-status-warning' :
+                                                                    alert.type === 'success' ? 'bg-status-success' : 'bg-status-info'
                                                         }`}></div>
                                                         <div className="flex-1">
                                                             <p className="text-sm text-gray-900">{alert.message}</p>
