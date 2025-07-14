@@ -46,7 +46,7 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                     </div>
 
                     {/* Desktop Center - Time & Status */}
-                    <div className="hidden lg:flex items-center space-x-6">
+                    <div className="hidden lg:flex items-center space-x-6 lg:mr-10">
                         <div className="text-center">
                             <div className="text-lg font-mono font-semibold text-gray-900">
                                 {currentTime.toLocaleTimeString()}
@@ -191,7 +191,7 @@ const ProfessionalHeader = ({ selectedStore, onStoreChange, stores, alerts = [] 
                                 onClick={() => setShowUserMenu(!showUserMenu)}
                                 className="flex items-center space-x-2 p-2 text-gray-400 hover:text-primary-500 hover:bg-primary-50 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                             >
-                                <UserCircleIcon className="w-7 h-7" />
+                                <UserCircleIcon className="w-7 h-7 lg:w-9 lg:h-9" />
                                 <ChevronDownIcon className="w-4 h-4" />
                             </button>
 
