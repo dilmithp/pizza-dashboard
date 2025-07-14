@@ -1,0 +1,63 @@
+pizza-hut-dashboard/
+├── public/
+│   ├── favicon.ico
+│   ├── pizza-hut-logo.png
+│   ├── camera-placeholder.jpg
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Dashboard/
+│   │   │   ├── Dashboard.jsx`
+│   │   │   ├── KPICard.jsx`
+│   │   │   ├── QueueMonitor.jsx`
+│   │   │   ├── PeakHourHeatmap.jsx`
+│   │   │   ├── IncidentLog.jsx`
+│   │   │   ├── CameraFeed.jsx`
+│   │   │   ├── AlertPanel.jsx`
+│   │   │   └── StoreSelector.jsx`
+│   │   ├── Layout/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── Layout.jsx
+│   │   ├── Common/
+│   │   │   ├── StatusIndicator.jsx`
+│   │   │   ├── LoadingSpinner.jsx`
+│   │   │   ├── AlertBadge.jsx
+│   │   │   ├── Button.jsx`
+│   │   │   └── Modal.jsx
+│   │   └── Charts/
+│   │       ├── LineChart.jsx
+│   │       ├── AreaChart.jsx
+│   │       ├── BarChart.jsx
+│   │       └── Heatmap.jsx
+│   ├── data/
+│   │   ├── dummyData.js`
+│   │   ├── mockIncidents.js`
+│   │   ├── peakHourData.js
+│   │   └── historicalData.js
+│   ├── hooks/
+│   │   ├── useRealTimeData.js
+│   │   ├── useLocalStorage.js
+│   │   └── useWebSocket.js
+│   ├── utils/
+│   │   ├── helpers.js`
+│   │   ├── dateUtils.js`
+│   │   ├── formatters.js`
+│   │   └── constants.js`
+│   ├── styles/
+│   │   ├── globals.css
+│   │   └── components.css
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── .env
+├── .env.example
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
