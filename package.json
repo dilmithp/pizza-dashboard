@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "postbuild": "echo 'Build completed successfully'",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -21,18 +23,32 @@
     "recharts": "^2.15.4"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^9.31.0",
-    "eslint-plugin-react": "^7.34.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "glob": "^11.0.3",
-    "postcss": "^8.4.39",
-    "rimraf": "^6.0.1",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.3.3"
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.10"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

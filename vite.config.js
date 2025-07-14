@@ -3,25 +3,28 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    host: true
-  },
+  base: '/',
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    assetsDir: 'assets',
+    sourcemap: false,
+    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           charts: ['recharts'],
-          icons: ['@heroicons/react']
+          utils: ['axios', 'moment', 'clsx']
         }
       }
     }
   },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'recharts', '@heroicons/react']
+  server: {
+    port: 3000,
+    host: true
+  },
+  preview: {
+    port: 4173,
+    host: true
   }
 })
